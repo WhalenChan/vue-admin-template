@@ -15,6 +15,8 @@ import router from './router'
 import '@/icons' // icon
 import '@/permission' // permission control
 
+// '@/' 见jsconfig.js =>"@/*": ["src/*"]
+
 /**
  * If you don't want to use mock-server
  * you want to use MockJs for mock api
@@ -39,5 +41,6 @@ new Vue({
   el: '#app',
   router,
   store,
+  // 视图渲染
   render: h => h(App)
 })
