@@ -35,12 +35,14 @@ Vue.use(ElementUI, { locale })
 // 如果想要中文版 element-ui，按如下方式声明
 // Vue.use(ElementUI)
 
+// 设置为 false 以阻止 vue 在启动时生成生产提示
 Vue.config.productionTip = false
 
 new Vue({
   el: '#app',
-  router,
-  store,
-  // 视图渲染
+  router, // (缩写) 相当于 routes: routes
+  // 通过在根实例中注册 store 选项，该 store 实例会注入到根组件下的所有子组件中，且子组件能通过 this.$store 访问到
+  store, // 把 store 对象提供给 “store” 选项，这可以把 store 的实例注入所有的子组件
+  // 视图渲染 将 h 作为 createElement 的别名是 Vue 生态系统中的一个通用惯例
   render: h => h(App)
 })

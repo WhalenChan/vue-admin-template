@@ -1,11 +1,15 @@
+<!-- 此组件(布局)渲染到App.vue的<router-view />这个路由出口 -->
 <template>
   <div :class="classObj" class="app-wrapper">
     <div v-if="device==='mobile'&&sidebar.opened" class="drawer-bg" @click="handleClickOutside" />
+    <!-- layout布局里面嵌套 sidebar组件 -->
     <sidebar class="sidebar-container" />
     <div class="main-container">
       <div :class="{'fixed-header':fixedHeader}">
+        <!-- layout布局里面嵌套 navbar组件 -->
         <navbar />
       </div>
+      <!-- layout布局里面嵌套 app-main组件 -->
       <app-main />
     </div>
   </div>

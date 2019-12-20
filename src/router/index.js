@@ -44,6 +44,7 @@ export const constantRoutes = [
   },
 
   {
+    // 以 / 开头的嵌套路径会被当作根路径,路由出口是App.vue中的<router-view></router-view>
     path: '/',
     component: Layout,
     redirect: '/dashboard',
@@ -159,13 +160,14 @@ export const constantRoutes = [
     ]
   },
 
+  // '*'捕获所有路由或 404 Not found 路由
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }
 ]
 
 const createRouter = () => new Router({
   // mode: 'history', // require service support
-  scrollBehavior: () => ({ y: 0 }),
+  scrollBehavior: () => ({ y: 0 }), // 滚动行为
   routes: constantRoutes
 })
 

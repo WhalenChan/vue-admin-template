@@ -1,3 +1,4 @@
+<!-- 顶部栏目(视图收缩工具、面包屑、头像) -->
 <template>
   <div class="navbar">
     <hamburger :is-active="sidebar.opened" class="hamburger-container" @toggleClick="toggleSideBar" />

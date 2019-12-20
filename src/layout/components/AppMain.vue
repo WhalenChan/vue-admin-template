@@ -1,6 +1,7 @@
 <template>
   <section class="app-main">
     <transition name="fade-transform" mode="out-in">
+      <!-- 点击左边菜单之后，主窗口的视图组建的出口 -->
       <router-view :key="key" />
     </transition>
   </section>
