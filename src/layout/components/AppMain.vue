@@ -1,7 +1,8 @@
 <template>
   <section class="app-main">
     <transition name="fade-transform" mode="out-in">
-      <!-- 点击左边菜单之后，主窗口的视图组建的出口 -->
+      <!-- 点击左边菜单之后，主窗口的视图组件的出口 -->
+      <!-- 设置:key属性强制不复用组件，就是切换菜单时重新加载组件? -->
       <router-view :key="key" />
     </transition>
   </section>

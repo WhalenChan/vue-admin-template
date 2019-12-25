@@ -1,8 +1,9 @@
 <!-- 顶部栏目(视图收缩工具、面包屑、头像) -->
 <template>
   <div class="navbar">
+    <!-- 展开/收缩侧边栏的按钮 -->
     <hamburger :is-active="sidebar.opened" class="hamburger-container" @toggleClick="toggleSideBar" />
-
+    <!-- 面包屑 路径Dashboard/Example/Tree -->
     <breadcrumb class="breadcrumb-container" />
 
     <div class="right-menu">

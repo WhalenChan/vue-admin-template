@@ -1,5 +1,7 @@
 <template>
+  <!-- 只显示constantRoutes路由中属性hidden:false的路由 -->
   <div v-if="!item.hidden" class="menu-wrapper">
+    <!-- 只有一个时，会将那个子路由当做根路由显示在侧边栏--如引导页面 -->
     <template v-if="hasOneShowingChild(item.children,item) && (!onlyOneChild.children||onlyOneChild.noShowingChildren)&&!item.alwaysShow">
       <!-- 嵌套AppLink组件 最终会渲染成router-link -->
       <app-link v-if="onlyOneChild.meta" :to="resolvePath(onlyOneChild.path)">
@@ -9,7 +11,7 @@
         </el-menu-item>
       </app-link>
     </template>
-
+    <!-- 当你一个路由下面的 children 声明的路由大于1个时，自动会变成嵌套的模式--如组件页面  -->
     <el-submenu v-else ref="subMenu" :index="resolvePath(item.path)" popper-append-to-body>
       <template slot="title">
         <!-- 嵌套Item组件(传值给子组件) -->
