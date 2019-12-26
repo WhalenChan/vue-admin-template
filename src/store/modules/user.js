@@ -37,6 +37,7 @@ const actions = {
   },
 
   // get user info
+  // 这里是用的命名约定，把属性值赋给相同名称的变量
   getInfo({ commit, state }) {
     return new Promise((resolve, reject) => {
       getInfo(state.token).then(response => {

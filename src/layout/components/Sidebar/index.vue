@@ -28,6 +28,7 @@ import variables from '@/styles/variables.scss'
 export default {
   components: { SidebarItem, Logo },
   computed: {
+    // 对象展开运算符，将/store/getters里面的sidebar这个getter映射到计算属性
     ...mapGetters([
       'sidebar'
     ]),
