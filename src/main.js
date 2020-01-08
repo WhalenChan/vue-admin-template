@@ -46,3 +46,8 @@ new Vue({
   // 视图渲染 将 h 作为 createElement 的别名是 Vue 生态系统中的一个通用惯例
   render: h => h(App)
 })
+// new Vue({
+//  render: function(h) {
+//    return h(App)
+//  }
+// }).$mount('#app')

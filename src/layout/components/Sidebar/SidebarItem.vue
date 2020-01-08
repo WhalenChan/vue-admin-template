@@ -13,6 +13,7 @@
     </template>
     <!-- 当你一个路由下面的 children 声明的路由大于1个时，自动会变成嵌套的模式--如组件页面  -->
     <el-submenu v-else ref="subMenu" :index="resolvePath(item.path)" popper-append-to-body>
+      <!-- 带有 slot 特性的具名插槽：直接把 slot 特性用在一个普通元素上 -->
       <template slot="title">
         <!-- 嵌套Item组件(传值给子组件) -->
         <item v-if="item.meta" :icon="item.meta && item.meta.icon" :title="item.meta.title" />
