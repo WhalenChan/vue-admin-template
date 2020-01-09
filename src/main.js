@@ -38,6 +38,7 @@ Vue.use(ElementUI, { locale })
 // 设置为 false 以阻止 vue 在启动时生成生产提示
 Vue.config.productionTip = false
 
+// 写法一
 new Vue({
   el: '#app',
   router, // (缩写) 相当于 routes: routes
@@ -45,7 +46,28 @@ new Vue({
   store, // 把 store 对象提供给 “store” 选项，这可以把 store 的实例注入所有的子组件
   // 视图渲染 将 h 作为 createElement 的别名是 Vue 生态系统中的一个通用惯例
   render: h => h(App)
+  // components: { App } //不起作用
 })
+// 写法二 可行
+/* new Vue({
+  el: '#app',
+  router,
+  store,
+  components: { App }, // 注释掉这行 不可行
+  render(createElement) {
+    return createElement('App')
+  }
+}) */
+
+// 写法三 不可行
+/* new Vue({
+  el: '#app',
+  router,
+  store,
+  components: { App },
+  template: '<App />'
+}) */
+
 // new Vue({
 //  render: function(h) {
 //    return h(App)
